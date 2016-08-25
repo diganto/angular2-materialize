@@ -12,8 +12,9 @@ The index.html links the JS files to the /js_bin as defined in system.config.js.
 
 This approach is for developers who don't want the lite-server as default and want WAMP,XAMPP or any APACHE machine to serve the pages without using angular-cli or other interfaces to compile and run it on lite-server.
 
-#Requirements(During developement on Localhost):
+##Requirements(During developement on Localhost):
 1.NPM: A javascript package manager
+
 2.NODE.JS
 
 -Diganta Datta
