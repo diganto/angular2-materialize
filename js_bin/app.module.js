@@ -12,6 +12,9 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var app_component_1 = require('./app.component');
 var my_demo_component_1 = require('./my-demo.component');
+var angular2_materialize_1 = require("angular2-materialize");
+var gallery_component_1 = require('./gallery.component');
+var dropdown_component_1 = require('./dropdown.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -20,7 +23,10 @@ var AppModule = (function () {
             imports: [platform_browser_1.BrowserModule],
             declarations: [
                 app_component_1.AppComponent,
-                my_demo_component_1.MyDemoComponent
+                my_demo_component_1.MyDemoComponent,
+                angular2_materialize_1.MaterializeDirective,
+                gallery_component_1.Gallery,
+                dropdown_component_1.Dropdown
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 

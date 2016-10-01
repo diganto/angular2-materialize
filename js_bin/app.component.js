@@ -9,15 +9,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var Materialize = require('angular2-materialize');
 var AppComponent = (function () {
-    function AppComponent() {
+    function AppComponent(elementref) {
+        this.elemref = elementref;
     }
+    AppComponent.prototype.ngOnInit = function () {
+        jQuery(this.elemref.nativeElement).find('#hdiv').append('<h5>|This div is added using DOM query|</h5>');
+    };
+    AppComponent.prototype.ngAfterContentInit = function () {
+        Materialize.toast("Hello Materialize -Angular 2.x RC7", 5000);
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "<h1>Tritan Technologies </h1>\n  <h3>\n  <li>TypeScript is now compiled to JS and stored in <b>/js_bin</b></li>\n  <br><li>So for UI coding(TypeScript) the <b>/app</b> folder will only matter</li>\n  <br><li>However for any JS config changes(change of default directory locations or mappings) look into <b>systemjs.config.js</b></li>\n  <br><li>And for TS compiler adjustments change <b>tsconfig.json</b></li>\n  <br><br><li>Use sudo npm start to start compilation and execution at localhost:3000 </li></h3>\n  <my-demo></my-demo>\n  <h2>-Diganto Datta</h2>"
+            template: "<div class=\"parallax-container\">\n    <div materialize=\"parallax\" class=\"parallax\"><img src=\"http://materializecss.com/images/parallax1.jpg\"></div>\n  </div>\n  <div class=\"section white\">\n      <div class=\"row container\">\n        This is a fixed html <div id=\"hdiv\"></div>\n        <h2 class=\"header\">Parallax</h2>\n        <p class=\"grey-text text-darken-3 lighten-3\">Parallax is an effect where the background content or image  move at a different speed than the foreground content while scrolling.</p>\n        \n       \n    <dropdown></dropdown> \n      \n      <gallery></gallery>\n    \n     </div>\n  </div>\n  <div class=\"parallax-container\">\n    <div materialize=\"parallax\" class=\"parallax\"><img src=\"http://materializecss.com/images/parallax2.jpg\"></div>\n  </div>"
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [core_1.ElementRef])
     ], AppComponent);
     return AppComponent;
 }());
